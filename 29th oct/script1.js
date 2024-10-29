@@ -3,7 +3,7 @@ function fetchUsers() {
     return new Promise((resolve, reject) => {
         // Simulate network delay
         setTimeout(() => {
-            const success = Math.random() > 0.2; 
+            const success = Math.random() > 0.8; 
 
             if (success) {
                 
