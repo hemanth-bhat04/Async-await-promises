@@ -36,23 +36,30 @@ async function fetchPosts() {
     });
 }
 
-
 async function displayPosts() {
     const posts = await fetchPosts();
     const postsContainer = document.getElementById('posts');
     postsContainer.innerHTML = ''; 
 
+    // Create a row to hold the posts
+    const rowDiv = document.createElement('div');
+    rowDiv.className = 'row'; // Bootstrap row class
+
     posts.forEach(post => {
         const postDiv = document.createElement('div');
-        postDiv.className = 'post';
+        postDiv.className = 'col-12 col-md-6 col-lg-4 mb-4'; // Responsive column classes
         postDiv.innerHTML = `
-            <h2>${post.title}</h2>
-            <p>${post.body}</p>
-            <button onclick="displayComments(${post.id})">View Comments</button>
-            <div class="comments" id="comments-${post.id}"></div>
+            <div class="post">
+                <h2>${post.title}</h2>
+                <p>${post.body}</p>
+                <button class="btn btn-primary" onclick="displayComments(${post.id})">View Comments</button>
+                <div class="comments" id="comments-${post.id}"></div>
+            </div>
         `;
-        postsContainer.appendChild(postDiv);
+        rowDiv.appendChild(postDiv);
     });
+
+    postsContainer.appendChild(rowDiv); // Append the row to the posts container
 }
 
 

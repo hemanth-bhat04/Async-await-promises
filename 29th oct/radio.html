@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="quizApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="radio.js" defer></script>
+</head>
+<body ng-controller="QuizController">
+    <div class="container">
+        <h1 class="text-center mb-4">Quiz App</h1>
+
+        <form name="quizForm">
+            <div class="mb-4">
+                <h4>1. What is the capital of France?</h4>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question1" ng-model="answers.question1" value="Paris" id="paris">
+                    <label class="form-check-label" for="paris">Paris</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question1" ng-model="answers.question1" value="London" id="london">
+                    <label class="form-check-label" for="london">London</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question1" ng-model="answers.question1" value="Berlin" id="berlin">
+                    <label class="form-check-label" for="berlin">Berlin</label>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <h4>2. Which of the following are programming languages? (Select all that apply)</h4>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" ng-model="answers.languages.JavaScript" id="js">
+                    <label class="form-check-label" for="js">JavaScript</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" ng-model="answers.languages.PHP" id="php">
+                    <label class="form-check-label" for="php">PHP</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" ng-model="answers.languages.HTML" id="html">
+                    <label class="form-check-label" for="html">HTML</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" ng-model="answers.languages.CSS" id="css">
+                    <label class="form-check-label" for="css">CSS</label>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-outline-primary" ng-click="submitQuiz()">Submit</button>
+        </form>
+
+        <div class="mt-4" ng-if="submitted">
+            <h4>Your Answers:</h4>
+            <p><strong>Question 1:</strong> {{ answers.question1 }}</p>
+            <p><strong>Question 2:</strong> 
+                <span ng-if="answers.languages.JavaScript">JavaScript </span>
+                <span ng-if="answers.languages.PHP">PHP </span>
+                <span ng-if="answers.languages.HTML">HTML </span>
+                <span ng-if="answers.languages.CSS">CSS </span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
