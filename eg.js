@@ -1,11 +1,10 @@
-// Simulating API endpoints for placeholder JSON
+
 const userApiUrls = [
     'https://jsonplaceholder.typicode.com/users/1',
     'https://jsonplaceholder.typicode.com/users/2',
     'https://jsonplaceholder.typicode.com/users/3'
 ];
 
-// Function to fetch user data from a given URL
 const fetchUserData = (url) => {
     return fetch(url)
         .then(response => {
@@ -16,7 +15,6 @@ const fetchUserData = (url) => {
         });
 };
 
-// Function to fetch all user data when the button is clicked
 const fetchAllUsers = () => {
     Promise.all(userApiUrls.map(fetchUserData))
         .then(users => {

@@ -1,7 +1,7 @@
-// AngularJS application
+
 var app = angular.module('myApp', []);
 
-// Custom directive for user info
+
 app.directive('userInfo', function() {
     return {
         restrict: 'E',
@@ -20,12 +20,14 @@ app.directive('userInfo', function() {
     };
 });
 
-// Custom directive for product info
+
 app.directive('productInfo', function() {
     return {
-        restrict: 'E',
+        restrict: 'E', //used as an  element
+
         scope: {
-            productName: '@',
+            productName: '@',  //one way binding
+
             productPrice: '@'
         },
         template: `

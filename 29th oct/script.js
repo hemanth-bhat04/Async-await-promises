@@ -41,13 +41,13 @@ async function displayPosts() {
     const postsContainer = document.getElementById('posts');
     postsContainer.innerHTML = ''; 
 
-    // Create a row to hold the posts
+   
     const rowDiv = document.createElement('div');
-    rowDiv.className = 'row'; // Bootstrap row class
+    rowDiv.className = 'row'; 
 
     posts.forEach(post => {
         const postDiv = document.createElement('div');
-        postDiv.className = 'col-12 col-md-6 col-lg-4 mb-4'; // Responsive column classes
+        postDiv.className = 'col-12 col-md-6 col-lg-4 mb-4'; 
         postDiv.innerHTML = `
             <div class="post">
                 <h2>${post.title}</h2>
