@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Management with fetch</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="fetch.js"></script>
+</head>
+<body class="container">
+    <h1 class="mt-5">User Management with fetch</h1>
+    <button class="btn btn-primary" onclick="getUsers()">Get Users</button>
+    <button class="btn btn-success" onclick="addUser()">Add User</button>
+    <button class="btn btn-warning" onclick="updateUser()">Update User</button>
+    <button class="btn btn-danger" onclick="deleteUser()">Delete User</button>
+    <table class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="userTable">
+        </tbody>
+    </table>
+</body>
+</html>

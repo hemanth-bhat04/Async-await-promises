@@ -37,7 +37,7 @@ app.controller('userCtrl', function($scope, $http) {
     };
 
     $scope.deleteUser = function() {
-        var userId = 1; // Example user ID to delete
+        var userId = 1; 
         $http.delete('https://jsonplaceholder.typicode.com/users/' + userId)
             .then(function(response) {
                 $scope.users = $scope.users.filter(user => user.id !== userId);
