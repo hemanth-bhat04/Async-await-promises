@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>setTimeout Example</title>
+</head>
+<body>
+    <h1>setTimeout Example</h1>
+    <button onclick="showMessage()">Click me</button>
+    <p id="message"></p>
+
+    <script>
+        function showMessage() {
+            setTimeout(function() {
+                document.getElementById("message").innerText = "Hello, World!";
+            }, 2000); // 2 seconds delay
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>setInterval Example</title>
+</head>
+<body>
+    <h1>setInterval Example</h1>
+    <p id="counter">0</p>
+
+    <script>
+        let count = 0;
+        setInterval(function() {
+            count++;
+            document.getElementById("counter").innerText = count;
+        }, 1000); // 1 second interval
+    </script>
+</body>
+</html>
