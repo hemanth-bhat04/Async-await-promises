@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="userApp">
+<head>
+    <title>User Management</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="http.js"></script>
+</head>
+<body ng-controller="userCtrl" class="container">
+    <h1 class="mt-5">User Management</h1>
+    <button class="btn btn-primary" ng-click="getUsers()">Get Users</button>
+    <button class="btn btn-success" ng-click="addUser()">Add User</button>
+    <button class="btn btn-warning" ng-click="updateUser()">Update User</button>
+    <button class="btn btn-danger" ng-click="deleteUser()">Delete User</button>
+    <button class="btn btn-info" ng-click="headRequest()">HEAD Request</button>
+    <table class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in users">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
